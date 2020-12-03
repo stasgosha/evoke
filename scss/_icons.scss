@@ -1,0 +1,62 @@
+[class^="icon-"], [class*=" icon-"]{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0;
+	background-size: contain !important;
+}
+
+.icon-sound{
+	width: 29px;
+	height: 26px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	background: #cf202e;
+	transform: skewX(-15deg) translateY(-5px);
+	margin-right: 15px;
+
+	&:before{
+		content: '';
+		display: block;
+		width: 18px;
+		height: 16px;
+		background: url(../img/icons/sound.png) no-repeat center center;
+		transform: skewX(15deg);
+	}
+
+	@media screen and (max-width: 991px){
+		transform: skewX(-15deg);
+	}
+}
+
+.icon-share{
+	width: 48px;
+	height: 35px;
+	background: url(../img/icons/share.png) no-repeat center center;
+}
+
+.icon-facebook-share{
+	width: 33px;
+	height: 24px;
+	background: url(../img/icons/facebook.png) no-repeat center center;
+}
+
+.icon-twitter-share{
+	width: 33px;
+	height: 24px;
+	background: url(../img/icons/twitter.png) no-repeat center center;
+}
+
+.icon-instagram-share{
+	width: 33px;
+	height: 24px;
+	background: url(../img/icons/instagram.png) no-repeat center center;
+}
+
+.icon-whatsapp-share{
+	width: 33px;
+	height: 24px;
+	background: url(../img/icons/whatsapp.png) no-repeat center center;
+}

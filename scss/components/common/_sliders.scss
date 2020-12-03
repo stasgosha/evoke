@@ -1,0 +1,137 @@
+.slick-slider{
+	.slide{
+		outline: none !important;
+	}
+
+	.slick-arrow{
+		width: 6.2500vw;
+		height: 4.4271vw;
+		z-index: 20;
+		background: #fafbfd;
+		opacity: 1;
+		transition: background $t;
+		display: flex !important;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0;
+		margin-top: calc(-4.4271vw / 2);
+		// border: 0.1042vw solid #1c1c1c;
+
+		&:before{
+			display: none;
+		}
+
+		svg{
+			fill: #1a191e;
+			width: 1.8750vw;
+			height: 1.6146vw;
+			display: block !important;
+			transition: fill $t;
+		}
+
+		&:hover{
+			background: $primary;
+
+			svg{
+				fill: #fff;
+			}
+		}
+
+		&.slick-prev{
+			right: 1.4063vw;
+			transform: skewX(-15deg);
+
+			svg{
+				transform: translateX(1px);
+				transform: skewX(15deg);
+			}
+		}
+
+		&.slick-next{
+			transform: skewX(15deg);
+			left: 1.4063vw;
+
+			svg{
+				transform: translateX(-1px);
+				transform: skewX(-15deg);
+			}
+		}
+
+		@media screen and (max-width: 767px){
+			width: 56px;
+			height: 40px;
+			margin-top: -20px;
+
+			svg{
+				width: 13px;
+				height: 21px;
+			}
+
+			&.slick-prev{
+				right: -12px;
+			}
+
+			&.slick-next{
+				left: -12px;
+			}
+		}
+	}
+}
+
+.slick-dots{
+	bottom: -21px !important;
+	display: flex !important;
+	width: calc(100% + 0.3646vw * 2);
+	margin-left: -0.3646vw;
+	margin-right: -0.3646vw;
+	
+	.item{
+		padding: 0 0.3646vw;
+	}
+
+	@media screen and (max-width: 767px){
+		width: calc(100% + 3px * 2);
+		margin-left: -3px;
+		margin-right: -3px;
+		
+		.item{
+			padding: 0 3px;
+		}
+	}
+
+	li{
+		flex: auto;
+		width: auto;
+		height: auto;
+		max-width: 88px;
+
+		button{
+			width: 100%;
+			height: auto;
+			background: #a4a7ac;
+			position: relative;
+			padding: 0;
+
+			&:after{
+				content: '';
+				display: block;
+				padding-top: 7.9535%;
+				max-width: 88px;
+
+				@media screen and (max-width: 767px){
+					padding-top: 4px;
+				}
+			}
+
+			&:before{
+				display: none;
+			}
+		}
+
+		&.slick-active{
+			button{
+				background: $primary;
+			}
+		}
+	}
+}

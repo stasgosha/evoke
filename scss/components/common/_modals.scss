@@ -1,0 +1,145 @@
+.modal{
+	display: none;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgba(#000, .7);
+	overflow-y: auto;
+	overscroll-behavior-y: contain;
+	z-index: 999;
+	// transform: scale(0);
+	visibility: hidden;
+	transition: visibility .4s, opacity .4s;
+	cursor: pointer;
+	opacity: 0;
+
+	.modal-dialog{
+		width: 100%;
+		max-width: 58.1250vw;
+		margin: 5.2083vw auto;
+		cursor: default;
+		flex: none;
+		position: relative;
+		transform: translateY(-100%);
+		opacity: 0;
+		visibility: hidden;
+		transition: all $t;
+		transition-delay: .2s;
+	}
+
+	&.visible{
+		visibility: visible;
+		opacity: 1;
+
+		.modal-dialog{
+			transform: translateY(0);
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	.modal-content{
+		background: #fff;
+	}
+
+	.modal-content-inner{
+		padding: 3.9063vw 6.7708vw 4.1667vw;
+	}
+
+	@media screen and (max-width: 1199px){
+		.modal-dialog{
+			max-width: 900px;
+			margin: 70px auto;
+		}
+
+		.modal-content-inner{
+			padding: 15px 25px;
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		.modal-dialog{
+			max-width: calc(100% - 67px);
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		.modal-dialog{
+			max-width: calc(100% - 30px);
+		}
+	}
+}
+
+.modal-close{
+	position: absolute;
+	right: -3.6458vw;
+	top: 0;
+	width: 1.6667vw;
+	height: 1.6667vw;
+	// border-radius: 50%;
+	opacity: 1;
+	transition: all $t;
+	appearance: none;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+
+	&:before,
+	&:after{
+		content: '';
+		display: block;
+		width: 2.2500vw;
+		height: 0.1563vw;
+		background: #fff;
+		position: absolute;
+		left: calc(50% - 1.2500vw / 2);
+		top: calc(50% - 0.1563vw / 2);
+		transition: all $t;
+	}
+
+	&:before{
+		transform: rotate(-45deg);
+	}
+
+	&:after{
+		transform: rotate(45deg);
+	}
+
+	&:hover{
+		&:before,
+		&:after{
+			background: $primary;
+		}
+	}
+
+	@media screen and (max-width: 1199px){
+		right: 0;
+		top: -40px;
+		width: 30px;
+		height: 30px;
+
+		&:before,
+		&:after{
+			width: 20px;
+			height: 2px;
+			left: calc(50% - 20px / 2);
+			top: calc(50% - 2px / 2);
+		}
+	}
+}
+
+.modal-caption{
+	background: #000;
+	color: #fff;
+	padding: 1.8229vw 3.1250vw;
+	font-size: 1.8229vw;
+	font-weight: bold;
+	line-height: 1.1;
+
+	@media screen and (max-width: 1199px){
+		padding: 15px 25px;
+		font-size: 18px;
+	}
+}

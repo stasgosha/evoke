@@ -1,0 +1,56 @@
+.breadcrumbs{
+	display: flex;
+	align-items: center;
+
+	li{
+		font-size: 13px;
+		margin-left: 20px;
+		position: relative;
+
+		svg{
+			width: 17px;
+			height: 17px;
+			fill: $primary;
+			transition: all $t;
+			display: block;
+		}
+
+		&:after{
+			content: '';
+			display: block;
+			width: 8px;
+			height: 8px;
+			background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3e%3cpath d='M207 30L177 0 49 128l128 128 30-30-98-98z' fill='%23595959'/%3e%3c/svg%3e") no-repeat center center / contain;
+			position: absolute;
+			left: -14px;
+			top: 5px;
+		}
+
+		&:last-child{
+			margin-left: 0;
+
+			a{
+				pointer-events: none;
+				cursor: default;
+			}
+
+			&:after{
+				display: none;
+			}
+		}
+
+		a{
+			color: $primary;
+			line-height: 16px;
+			display: block;
+
+			&:hover{
+				color: $text-dark;
+
+				svg{
+					fill: $text-dark;
+				}
+			}
+		}
+	}
+}

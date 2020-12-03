@@ -1,0 +1,282 @@
+.form-field{
+	position: relative;
+
+	&:before{
+		content: '';
+		display: block;
+		width: calc(100% - 3.6458vw * 2);
+		height: 0.6250vw;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 0;
+		background: $primary;
+		transition: all $t;
+		z-index: 2;
+
+		@media screen and (max-width: 767px){
+			height: 11px;
+			width: 50%;
+		}
+
+		@media screen and (max-height: 549px){
+			height: 6px;
+		}
+	}
+
+	&:focus-within{
+		&:before{
+			width: 100% !important;
+		}
+	}
+
+	.input-field,
+	textarea{
+		border: 0;
+		height: 3.6458vw;
+		width: 100%;
+		font-size: 1.6667vw;
+		color: $text-color;
+		font-weight: 400;
+		padding: 0 0.6250vw 0.6250vw;
+		outline: none !important;
+		transition: all $t;
+		background: #fff;
+		font-family: $main-font;
+		appearance: none;
+		border-radius: 0;
+		text-align: center;
+
+		&::-webkit-input-placeholder{
+			color: $text-color;
+			transition: all $t;
+			opacity: 1;
+		}
+
+		&::-moz-placeholder{
+			color: $text-color;
+			transition: all $t;
+			opacity: 1;
+		}
+
+		&[type="email"],
+		&[type="tel"]{
+			text-align: center;
+			direction: ltr;
+
+			&::placeholder{
+				direction: rtl;
+			}
+		}
+
+		&:focus{
+			border-color: $accent;
+		}
+
+		@media screen and (max-width: 767px){
+			font-size: 21px;
+			height: 54px;
+			padding: 0 11px 11px;
+		}
+
+		@media screen and (max-width: 767px) and (max-height: 630px){
+			height: 45px;
+		}
+
+		@media screen and (max-height: 549px){
+			height: 36px;
+			padding-bottom: 6px;
+		}
+	}
+
+	textarea{
+		resize: none;
+		transition: all $t;
+		display: block;
+		height: 90px;
+
+		// &:focus{
+		// 	height: 8vw;
+		// }
+	}
+
+	// @media screen and (max-width: 1399px){
+	// 	.input-field,
+	// 	textarea{
+	// 		font-size: 14px;
+	// 		height: 30px;
+	// 		padding: 0 5px;
+	// 	}
+	// }
+
+	// @media screen and (max-width: 767px){
+	// 	.input-field,
+	// 	textarea{
+	// 		height: 50px;
+	// 	}
+	// }
+}
+
+.form{
+	.form-caption{
+		font-size: 2.6042vw;
+		line-height: .9;
+		margin-bottom: 1.3021vw;
+		letter-spacing: 0.005em;
+		text-align: center;
+		font-weight: 400;
+
+		@media screen and (max-width: 767px){
+			font-size: 40px;
+			line-height: 35px;
+			margin-bottom: 20px;
+		}
+
+		@media screen and (max-width: 359px){
+			font-size: 36px;
+			margin-bottom: 10px;
+		}
+	}
+
+	.form-row{
+		margin-bottom: 30px;
+
+		&:last-child,
+		&.last{
+			margin-bottom: 0 !important;
+		}
+
+		@media screen and (max-height: 549px){
+			margin-bottom: 7px;
+		}
+	}
+
+	p:empty{
+		display: none;
+	}
+
+	@media screen and (max-width: 639px) and (max-height: 580px){
+		.form-row{
+			margin-bottom: 10px;
+
+			&:last-child,
+			&.last{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.checkbox{
+	position: relative;
+
+	input{
+		visibility: hidden;
+		position: absolute;
+
+		&:checked{
+			.wpcf7-list-item-label,
+			+ .wpcf7-list-item-label,
+			+ label{
+				&:after{
+					// transform: rotate(-45deg);
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	br{
+		display: none;
+	}
+
+	.wpcf7-list-item-label{
+		display: none;
+	}
+
+	.wpcf7-checkbox{
+		display: none;
+	}
+
+	span.wpcf7-list-item{
+		margin: 0;
+		display: block;
+		width: 100%;
+	}
+
+	.wpcf7-list-item-label{
+		padding-right: 2.3958vw;
+		line-height: 1.7708vw;
+		position: relative;
+		font-size: 1.6667vw;
+		line-height: 1.7708vw;
+		display: block;
+		cursor: pointer;
+		text-align: right;
+		user-select: none;
+		color: $text-color;
+
+		&:before{
+			content: '';
+			display: block;
+			width: 1.7708vw;
+			height: 1.7708vw;
+			background: #fff;
+			position: absolute;
+			right: 0;
+			top: 0;
+			box-sizing: border-box;
+		}
+
+		&:after{
+			content: '';
+			display: block;
+			width: 1.9792vw;
+			height: 1.6667vw;
+			position: absolute;
+			right: -0.2083vw;
+			top: 0.1042vw;
+			transition: all $t;
+			opacity: 0;
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='40' height='32'%3e%3cpath fill-rule='evenodd' fill='%239E0808' d='M39 3L15 31h-1L1 16l3-3 11 12L36 0l3 3z'/%3e%3c/svg%3e");
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		@media screen and (max-width: 767px){
+			font-size: 21px;
+			line-height: 17px;
+			padding-right: 25px;
+
+			&:before{
+				width: 17px;
+				height: 17px;
+			}
+
+			&:after{
+				right: -2px;
+				top: 2px;
+				width: 19px;
+				height: 16px;
+			}
+		}
+	}
+
+	&.checked,
+	&:checked{
+		.wpcf7-list-item-label,
+		+ .wpcf7-list-item-label,
+		+ label{
+			&:after{
+				// transform: rotate(-45deg);
+				opacity: 1;
+			}
+		}
+	}
+}
+
+html[dir='rtl']{
+	.wpcf7{
+		direction: rtl !important;
+	}
+}

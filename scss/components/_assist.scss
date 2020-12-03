@@ -1,0 +1,148 @@
+@mixin addFocusBorder($color: $primary, $size: 8px){
+	position: relative;
+	z-index: 2;
+
+	&:focus{
+		outline: none;
+
+		&:before{
+			content: '';
+			display: block;
+			width: calc(100% + #{$size});
+			height: calc(100% + #{$size});
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			z-index: -1;
+			border: 1px solid $color;
+		}
+	}
+}
+
+.push{
+	position: relative;
+}
+
+.flex-center{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flex-right{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.flex-end{
+	justify-content: flex-end;
+}
+
+.flex-auto{
+	flex: auto;
+}
+
+.text-uppercase{
+	text-transform: uppercase;
+}
+
+.object-fit-cover{
+	object-fit: cover;
+	object-position: center center;
+	font-family: 'object-fit: cover; object-position: center center;';
+}
+
+.visually-hidden{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.sm-visible{
+	display: none !important;
+
+	@media screen and (max-width: 767px){
+		display: block !important;
+	}
+}
+
+.sm-visible-flex{
+	display: none !important;
+
+	@media screen and (max-width: 767px){
+		display: flex !important;
+	}
+}
+
+@media screen and (max-width: 767px){
+	.sm-hidden{
+		display: none !important;
+	}
+}
+
+
+// MD
+.md-visible{
+	display: none !important;
+
+	@media screen and (max-width: 991px){
+		display: block !important;
+	}
+}
+
+.md-visible-flex{
+	display: none !important;
+
+	@media screen and (max-width: 991px){
+		display: flex !important;
+	}
+}
+
+@media screen and (max-width: 991px){
+	.md-hidden{
+		display: none !important;
+	}
+}
+
+
+.to-top-btn{
+	position: fixed;
+	z-index: 80;
+	bottom: 10px;
+	right: 10px;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: rgba(#000, .66);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: translateY(100px);
+	transition: all $t;
+
+	&.visible{
+		transform: translateY(0);
+	}
+
+	svg{
+		width: 21px;
+		height: 15px;
+		fill: #fff;
+	}
+}
+
+.page-template-thankyou .hide-on-thanks{
+	display: none !important;
+}
+
+// .page-template-blog .hide-on-thanks{
+// 	display: none !important;
+// }

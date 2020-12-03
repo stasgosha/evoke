@@ -1,0 +1,10 @@
+@font-face{
+	font-family: 'Almoni Tzar'; 
+	src: url('../fonts/almoni-tzar-regular-aaa.woff2') format('woff2'),
+		 url('../fonts/almoni-tzar-regular-aaa.woff') format('woff');
+	font-style: normal;
+	font-display: swap;
+	font-weight: 400;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Heebo:400,700&display=swap&subset=hebrew);

@@ -1,0 +1,29 @@
+// .tpg - typoraphy prefix
+
+.evoke-landing{
+	font-size: 1.0417vw;
+	line-height: 1.45;
+	color: #fff;
+	font-family: $main-font;
+}
+
+.section-caption{
+	margin-bottom: 1.3021vw;
+	color: inherit;
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+
+	.sc-title{
+		text-transform: uppercase;
+		font-weight: bold;
+		font-family: $second-font;
+		font-size: 1.5625vw;
+		line-height: 1.3;
+
+		&.large{
+			font-size: 7.2917vw;
+		}
+	}
+}
